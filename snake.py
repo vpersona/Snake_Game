@@ -47,4 +47,4 @@ while True:
     snake.draw_snake()
     pygame.display.update()
     clock.tick(60)
-
+#note
