@@ -10,9 +10,12 @@ This is a classic Snake game implemented using Pygame. The player controls a sna
 
 ## 2. Getting Started
 Prerequisites
-*Python 3.x
-*Pygame library
+
+* Python 3.x
+* Pygame library 
+
 Installation
+
 I. Clone the repository:
 
 
@@ -91,14 +94,14 @@ class SNAKE():
 ### Fruit Class
 The FRUIT class handles the creation and positioning of the fruit that the snake eats.
 
-
+```python
 class FRUIT:
     def __init__(self):
         # Initialize fruit position
         self.x = random.randint(0, cell_number - 1)
         self.y = random.randint(0, cell_number - 1)
         self.pos = Vector2(self.x, self.y)
-    
+```
     def draw_fruit(self):
         # Draw the fruit on the screen
         fruit_rect = pygame.Rect(int(self.pos.x * cell_size), int(self.pos.y * cell_size), cell_size, cell_size)
@@ -109,6 +112,7 @@ class FRUIT:
         self.x = random.randint(0, cell_number - 1)
         self.y = random.randint(0, cell_number - 1)
         self.pos = Vector2(self.x, self.y)
+
 ### Main Class
 The MAIN class manages the overall game logic, including updating game states, drawing elements, checking for collisions, and handling game over scenarios.
 
