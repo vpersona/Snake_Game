@@ -35,14 +35,14 @@ python main.py
 Arrow Keys: Use the arrow keys to change the direction of the snake.
 *Up: Move the snake up.
 *Down: Move the snake down.
-Left: Move the snake left.
-Right: Move the snake right.
-Code Overview
-Snake Class
+*Left: Move the snake left.
+*Right: Move the snake right.
+
+## 4. Code Overview
+### Snake Class 
+
 The SNAKE class is responsible for managing the snake's behavior, including movement, growth, and drawing the snake on the screen.
 
-python
-Skopiuj kod
 class SNAKE():
     def __init__(self):
         # Initializing the snake body, direction, and new block flag
@@ -88,11 +88,10 @@ class SNAKE():
         # Reset snake to initial state
         self.body = [Vector2(5, 10), Vector2(4, 10), Vector2(3, 10)]
         self.direction = Vector2(0, 0)
-Fruit Class
+### Fruit Class
 The FRUIT class handles the creation and positioning of the fruit that the snake eats.
 
-python
-Skopiuj kod
+
 class FRUIT:
     def __init__(self):
         # Initialize fruit position
@@ -110,11 +109,10 @@ class FRUIT:
         self.x = random.randint(0, cell_number - 1)
         self.y = random.randint(0, cell_number - 1)
         self.pos = Vector2(self.x, self.y)
-Main Class
+### Main Class
 The MAIN class manages the overall game logic, including updating game states, drawing elements, checking for collisions, and handling game over scenarios.
 
-python
-Skopiuj kod
+
 class MAIN():
     def __init__(self):
         self.snake = SNAKE()
