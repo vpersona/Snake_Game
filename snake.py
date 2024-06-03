@@ -1,7 +1,6 @@
 import pygame, sys, random
 from pygame.math import Vector2
 
-
 #Creating a Snake 
 
 class SNAKE():
@@ -128,7 +127,7 @@ class FRUIT:
         #create a rectangle and draw it
         fruit_rect=pygame.Rect(int(self.pos.x*cell_size),int(self.pos.y*cell_size),cell_size,cell_size)
         screen.blit(apple,fruit_rect)
-        #pygame.draw.rect(screen,(120,160,130),fruit_rect)
+        
         
 
     def randomize(self):
@@ -148,12 +147,14 @@ class MAIN():
         self.snake.move_snake()
         self.check_collision()
         self.check_fail()
+      
 
     def draw_elements(self):
         self.draw_grass()
         self.fruit.draw_fruit()
         self.snake.draw_snake()
         self.draw_score()
+       
 
     def check_collision(self):
         if self.fruit.pos==self.snake.body[0]:
@@ -214,6 +215,8 @@ class MAIN():
         screen.blit(score_surface,score_rect)
         pygame.draw.rect(screen,(56,74,12),bg_rect,2)
 
+
+
 pygame.mixer.pre_init(44100,-16,2,512)
 pygame.init()
 
@@ -226,12 +229,13 @@ cell_size=40
 cell_number=20
 screen=pygame.display.set_mode((cell_number*cell_size,cell_number*cell_size))
 
+
 #FPS limit
 clock=pygame.time.Clock()
-
 apple=pygame.image.load('graphics/apple.png').convert_alpha()
-
 game_font=pygame.font.Font('fonts/Pixeled.ttf',25)
+
+
 
 SCREEN_UPDATE= pygame.USEREVENT
 pygame.time.set_timer(SCREEN_UPDATE,150)
@@ -239,6 +243,9 @@ pygame.time.set_timer(SCREEN_UPDATE,150)
 main_game=MAIN()
 
 while True:
+
+    mouse_pos=pygame.mouse.get_pos()
+
     #Draw all elements
     for event in pygame.event.get():
 
@@ -265,7 +272,8 @@ while True:
             if event.key==pygame.K_LEFT:
                 if main_game.snake.direction.x !=1:
                     main_game.snake.direction=Vector2(-1,0)
-
+                    
+        
 
 
     screen.fill((175,200,75))
