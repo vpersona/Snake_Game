@@ -18,33 +18,33 @@ Installation
 
 I. Clone the repository:
 
-
+```
 git clone https://github.com/vpersona/Snake_Game.git
 cd Snake_Game
-
+```
 II. Install the Pygame library:
 
-
+```
 pip install pygame
-
+```
 
 ## 3.Running the Game
 Run the game script:
-
+```
 python main.py
-
+```
 
 ## 4. Game Controls
 Arrow Keys: Use the arrow keys to change the direction of the snake.
-*Up: Move the snake up.
-*Down: Move the snake down.
-*Left: Move the snake left.
-*Right: Move the snake right.
+* Up: Move the snake up.
+* Down: Move the snake down.
+* Left: Move the snake left.
+* Right: Move the snake right.
 
 ## 4. Code Overview
 ### Snake Class 
 
-The SNAKE class is responsible for managing the snake's behavior, including movement, growth, and drawing the snake on the screen.
+The **SNAKE class** is responsible for managing the snake's behavior, including movement, growth, and drawing the snake on the screen.
 
 class SNAKE():
     def __init__(self):
@@ -92,7 +92,7 @@ class SNAKE():
         self.body = [Vector2(5, 10), Vector2(4, 10), Vector2(3, 10)]
         self.direction = Vector2(0, 0)
 ### Fruit Class
-The FRUIT class handles the creation and positioning of the fruit that the snake eats.
+The **FRUIT class** handles the creation and positioning of the fruit that the snake eats.
 
 ```python
 class FRUIT:
@@ -114,14 +114,14 @@ class FRUIT:
         self.pos = Vector2(self.x, self.y)
 
 ### Main Class
-The MAIN class manages the overall game logic, including updating game states, drawing elements, checking for collisions, and handling game over scenarios.
+The **MAIN class** manages the overall game logic, including updating game states, drawing elements, checking for collisions, and handling game over scenarios.
 
-
+```python
 class MAIN():
     def __init__(self):
         self.snake = SNAKE()
         self.fruit = FRUIT()
-        
+```
     def update(self):
         # Update snake movement and check for collisions or failures
         self.snake.move_snake()
@@ -186,11 +186,12 @@ class MAIN():
         score_rect = score_surface.get_rect(center=(score_x, score_y))
         
         apple_rect = apple.get_rect(midright=(score_rect.left, score_rect.centery))
-Credits
-Graphics: All graphics used in the game (snake head, body, tail, fruit) are custom made and stored in the graphics directory.
-Sound Effects: The crunch sound effect played when the snake eats a fruit is stored in the sound directory.
-Fonts: The game uses a pixelated font stored in the fonts directory.
-License
+## 5. Credits
+**Graphics:** All graphics used in the game (snake head, body, tail, fruit) are custom made and stored in the graphics directory.
+**Sound Effects:** The crunch sound effect played when the snake eats a fruit is stored in the sound directory.
+**Fonts:** The game uses a pixelated font stored in the fonts directory.
+
+##License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Enjoy the game!
+### Enjoy the game! 	:smiley:
