@@ -193,7 +193,7 @@ class MAIN():
 
 **Fonts:** The game uses a pixelated font stored in the fonts directory.
 
-##License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ### Enjoy the game! 	:smiley:
