@@ -3,18 +3,18 @@
 This is a classic Snake game implemented using Pygame. The player controls a snake that grows in length as it eats fruits that appear on the screen. The game ends if the snake collides with itself or the boundaries of the game window.
 
 ## 1. Features
-* Snake Movement: The snake can move in four directions: up, down, left, and right.
-* Fruit Eating: When the snake eats a fruit, it grows in length and a sound effect is played.
-* Score Tracking: The player's score is displayed on the screen, which increases as the snake eats more fruits.
-* Grass Background: The game features a patterned grass background.
+* **Snake Movement:** The snake can move in four directions: up, down, left, and right.
+* **Fruit Eating:** When the snake eats a fruit, it grows in length and a sound effect is played.
+* **Score Tracking:** The player's score is displayed on the screen, which increases as the snake eats more fruits.
+* **Grass Background:** The game features a patterned grass background.
 
 ## 2. Getting Started
-Prerequisites
+**Prerequisites**
 
 * Python 3.x
 * Pygame library 
 
-Installation
+**Installation**
 
 I. Clone the repository:
 
@@ -45,7 +45,7 @@ Arrow Keys: Use the arrow keys to change the direction of the snake.
 ### Snake Class 
 
 The **SNAKE class** is responsible for managing the snake's behavior, including movement, growth, and drawing the snake on the screen.
-
+```python
 class SNAKE():
     def __init__(self):
         # Initializing the snake body, direction, and new block flag
@@ -58,7 +58,7 @@ class SNAKE():
 
         # Loading crunch sound
         self.crunch_sound = pygame.mixer.Sound('sound/eating-sound-effect.mp3')
-
+```
     def draw_snake(self):
         # Update head and tail graphics before drawing
         self.update_head_graphics()
@@ -188,7 +188,9 @@ class MAIN():
         apple_rect = apple.get_rect(midright=(score_rect.left, score_rect.centery))
 ## 5. Credits
 **Graphics:** All graphics used in the game (snake head, body, tail, fruit) are custom made and stored in the graphics directory.
+
 **Sound Effects:** The crunch sound effect played when the snake eats a fruit is stored in the sound directory.
+
 **Fonts:** The game uses a pixelated font stored in the fonts directory.
 
 ##License
